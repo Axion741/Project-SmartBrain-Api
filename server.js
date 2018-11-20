@@ -35,7 +35,7 @@ app.get('/profile/:id', profile.handleProfile(db))
 app.put('/image', image.handleImage(db))
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 
-var server = app.listen(3000, () => {
+var server = app.listen(process.env.PORT || 3000, () => {
     console.log("Server Online", server.address().port);
 })
 
